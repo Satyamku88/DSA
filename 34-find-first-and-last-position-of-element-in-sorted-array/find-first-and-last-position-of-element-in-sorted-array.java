@@ -8,7 +8,6 @@ class Solution {
         return result;
     }
 
-    // Find first occurrence
     private int findFirst(int[] nums, int target) {
         int low = 0, high = nums.length - 1;
         int ans = -1;
@@ -17,8 +16,8 @@ class Solution {
             int mid = low + (high - low) / 2;
 
             if (nums[mid] == target) {
-                ans = mid;        // possible answer
-                high = mid - 1;   // go left
+                ans = mid;        
+                high = mid - 1;   
             } else if (nums[mid] < target) {
                 low = mid + 1;
             } else {
@@ -28,7 +27,7 @@ class Solution {
         return ans;
     }
 
-    // Find last occurrence
+
     private int findLast(int[] nums, int target) {
         int low = 0, high = nums.length - 1;
         int ans = -1;
@@ -37,8 +36,8 @@ class Solution {
             int mid = low + (high - low) / 2;
 
             if (nums[mid] == target) {
-                ans = mid;        // possible answer
-                low = mid + 1;    // go right
+                ans = mid;        
+                low = mid + 1;    
             } else if (nums[mid] < target) {
                 low = mid + 1;
             } else {
