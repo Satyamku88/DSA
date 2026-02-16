@@ -1,9 +1,7 @@
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
-        int n=piles.length;
-        //int ans=0;
         int max=0;
-        for(int i=0;i<n;i++){
+        for(int i=0;i<piles.length;i++){
             if(max<piles[i]){
                 max=piles[i];
             }
@@ -22,8 +20,7 @@ class Solution {
     }
     private long chcek(int[] piles,int hour){
         long sum=0;
-        int n=piles.length;
-        for(int i=0;i<n;i++){
+        for(int i=0;i<piles.length;i++){
             sum+=(int)Math.ceil((double)piles[i]/(double)hour);
         }
         return sum;
