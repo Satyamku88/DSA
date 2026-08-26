@@ -10,20 +10,27 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        Stack<Integer> stack = new Stack<>();
+                ListNode prev = null;
 
+        // Start from the head of the list
         ListNode temp = head;
 
+        // Traverse the list
         while (temp != null) {
-            stack.push(temp.val);
-            temp = temp.next;
+            // Save the next node
+            ListNode front = temp.next;
+
+            // Reverse the current node's pointer
+            temp.next = prev;
+
+            // Move prev to current node
+            prev = temp;
+
+            // Move to the next node
+            temp = front;
         }
 
-        temp = head;
-        while (temp != null) {
-            temp.val = stack.pop();
-            temp = temp.next;
-        }
-        return head;
+        // Return new head (last node becomes first)
+        return prev;
     }
 }
